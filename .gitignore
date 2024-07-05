@@ -1,2 +1,3 @@
-.env
-runtime.txt
+/Crypto_site/runtime.txt
+/Crypto_site/backend/.env
+/Crypto_site/frontend/crypto-app/node_modules

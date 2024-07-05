@@ -25,7 +25,6 @@ class GetallOffers(APIView, ProvidersPagePagination):
     def get(self, request, format=None):
         data = request.query_params
         if data:
-            print(data)
             offers = CachedOfferData.objects.filter(currency=data['fromCurrency'].lower(),cryptoCurrency=data['toCurrency'].lower(),currencyAmount=data['amount']).order_by('-cacheDate','-cryptoAmount')[:4]
             if offers.exists():  
                 paginated_page = self.paginate_queryset(offers,request)
